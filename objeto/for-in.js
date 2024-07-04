@@ -5,11 +5,11 @@ const estudante = {
   turma: 'JavaScript',
   bolsista: true,
   telefone: ['551199999998', '551199999998'],
-  endereco: [{ 
+  endereco: [{
     rua: 'Av. Jaguari',
     numero: '23',
     complemento: 'apto 43'
-  }, 
+  },
   {
     rua: 'Av. Paulista',
     numero: '12',
@@ -17,6 +17,23 @@ const estudante = {
   }]
 }
 
-for (let chave in estudante){ // a cada iteração a let chave guarda as chaves do objeto
-  console.log(estudante[chave]) // pega apenas os valores
+for (let chave in estudante) { // a cada iteração a let chave guarda as chaves do objeto
+  const texto = `a chave ${chave} tem o valor ${estudante[chave]}`
+  console.log(texto)
+  // console.log(estudante[chave]) pega apenas os valores
+  //  console.log(chave)  pega apenas as chaves
 }
+
+// estudante['nome']
+
+//  [object Object],[object Object] -> Js tentando converter objeto para string -> Template string converte a variavel para string
+
+for (let chave in estudante) {
+  const tipo = typeof estudante[chave]
+  if (tipo !== 'object' && tipo !== 'function') {
+    const texto = `a chave ${chave} tem o valor ${estudante[chave]}`
+    console.log(texto)
+  }
+}
+
+// typeoƒ do array é object
